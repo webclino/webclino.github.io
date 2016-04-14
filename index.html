@@ -26,8 +26,8 @@
 
 
 	<meta name="msapplication-TileImage" content="icon.png">
-	<meta name="msapplication-TileColor" content="#212121">
-	<meta name="theme-color" content="#512DA8">
+	<meta name="msapplication-TileColor" content="#00bcd4">
+	<meta name="theme-color" content="#00bcd4">
 	<link rel="stylesheet" href="css/material.min.css">
 	<link rel="stylesheet" href="fonts/material-icons.css">
 
@@ -258,7 +258,9 @@
 	navigator.serviceWorker.register('/sw.js').then(function(reg) {
 		if (!reg.installing) return;
 		console.log("There is a ServiceWorker installing");
-
+		notification.MaterialSnackbar.showSnackbar({
+					message: 'WebClino has Installing for Offline Use'
+				});
 		var worker = reg.installing;
 		worker.addEventListener('statechange', function() {
 			if (worker.state == 'redundant') {
@@ -270,7 +272,7 @@
 			}
 			if (worker.state == 'installed') {
 				notification.MaterialSnackbar.showSnackbar({
-					message: 'SvgNet Ready For Offline Use'
+					message: 'WebClino Ready For Offline Use'
 				});
 
 			}
