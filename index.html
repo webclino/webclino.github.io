@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>WebClino</title>
+	<meta name="description" content="Structural Geology Attitudes with HTML5 JS and SVG">
+	<meta name="author" content="Arijit Laik">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta property="og:title" content="StrAtti" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="Structural Geology Attitudes with HTML5 JS and SVG" />
+	<meta property="og:type" content="website" />
+	<link rel="manifest" href="manifest.json">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="WebClino">
+	<link rel="icon" sizes="512x512" href="icon.png">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="StrAtti">
+	<link rel="apple-touch-icon" href="icon.png">
+
+
+	<meta name="msapplication-TileImage" content="icon.png">
+	<meta name="msapplication-TileColor" content="#212121">
+	<meta name="theme-color" content="#512DA8">
+	<link rel="stylesheet" href="css/material.min.css">
+	<link rel="stylesheet" href="fonts/material-icons.css">
+
+
+	<link rel="stylesheet" href="css/material.custom.css">
+	<script src="js/material.min.js"></script>
+
+
+</head>
+
+<body>
+
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row ">
+
+				<span class="mdl-layout-title"><b>Web<l class="mdl-color-text--accent">Clino</l></b></span>
+
+				<div class="mdl-layout-spacer"></div>
+
+				<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--icon mdl-button--accent" id="editLatLon">
+					<i class="material-icons">edit_location</i>
+				</button>
+
+			</div>
+
+			<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+				<a href="#fixed-tab-1" class="mdl-layout__tab is-active">Planes</a>
+				<a href="#fixed-tab-2" class="mdl-layout__tab">Lines</a>
+				<a href="#fixed-tab-3" class="mdl-layout__tab">Data</a>
+			</div>
+		</header>
+		<div class="mdl-layout__drawer">
+			<span class="mdl-layout-title">Menu</span>
+		</div>
+		<main class="mdl-layout__content">
+			<section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+				<div class="page-content">
+					<div class="mdl-grid section--center">
+						<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+							<div class="mdl-card__title mdl-color--accent mdl-typography--text-center">
+								<h2 class="mdl-card__title-text mdl-color-text--accent-contrast">Record Planar Attitude</h2>
+
+							</div>
+							<!--<div class="mdl-card__media">
+									<img src="photo.jpg" width="220" height="140" border="0" alt="" style="padding:20px;">
+								</div>-->
+							<div class="mdl-card__supporting-text">
+								<div class="mdl-grid mdl-typography--text-justify	">
+									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="number" max="360" min="0" step=any id="strike">
+											<label class="mdl-textfield__label" for="strike">Strike</label>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="number" max="90" min="0" step=any id="dip">
+											<label class="mdl-textfield__label" for="dip">Dip</label>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="number" max="180" min="-180" step=any id="Planelat" disabled>
+											<label class="mdl-textfield__label" for="Planelat">Lat</label>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="number" max="90" min="-90" step=any id="Planelon" disabled>
+											<label class="mdl-textfield__label" for="PlaneLon">Lon</label>
+										</div>
+									</div>
+									<b>Location Accuracy:</b><span id="Accpl"></span>
+								</div>
+							</div>
+							<div class="mdl-card__actions mdl-typography--text-center ">
+
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect saverbutton">
+					<i class="material-icons">save</i>
+				</button>
+				<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--primary mdl-button--colored mdl-js-ripple-effect lockerbutton">
+					<i class="material-icons">lock_open</i>
+				</button>
+			</section>
+			<section class="mdl-layout__tab-panel" id="fixed-tab-2">
+				<div class="page-content">
+					<div class="mdl-grid section--center">
+						<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+							<div class="mdl-card__title mdl-color--accent mdl-typography--text-center">
+								<h2 class="mdl-card__title-text mdl-color-text--accent-contrast">Record Linear Attitude</h2>
+
+							</div>
+							<!--<div class="mdl-card__media">
+									<img src="photo.jpg" width="220" height="140" border="0" alt="" style="padding:20px;">
+								</div>-->
+							<div class="mdl-card__supporting-text">
+								<div class="mdl-grid mdl-typography--text-justify	">
+									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="number" max="360" min="0" step=any id="trend">
+											<label class="mdl-textfield__label" for="trend">Trend</label>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="number" max="90" min="0" step=any id="plunge">
+											<label class="mdl-textfield__label" for="plunge">Plunge</label>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="number" max="180" min="-180" step=any id="Linelat" disabled>
+											<label class="mdl-textfield__label" for="Linelat">Lat</label>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="number" max="90" min="-90" step=any id="Linelon" disabled>
+											<label class="mdl-textfield__label" for="Linelon">Long</label>
+										</div>
+									</div>
+									<b>Location Accuracy:</b><span id="Accln"></span>
+								</div>
+							</div>
+							<div class="mdl-card__actions mdl-typography--text-center ">
+							</div>
+						</div>
+
+					</div>
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect saverbutton">
+						<i class="material-icons">save</i>
+					</button>
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--primary mdl-button--colored mdl-js-ripple-effect lockerbutton">
+						<i class="material-icons">lock_open</i>
+					</button>
+			</section>
+			<section class="mdl-layout__tab-panel" id="fixed-tab-3">
+				<div class="page-content">
+					<div class="mdl-grid section--center">
+						<div class="mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+							<table class="mdl-data-table mdl-js-data-table">
+								<thead>
+									<tr>
+										<th>Strike/Trend</th>
+										<th>Dip/Plunge</th>
+										<th>Lat</th>
+										<th>Lon</th>
+										<th>
+											<button class="mdl-button mdl-js-button mdl-button--icon">
+												<i class="material-icons">more_vert</i>
+											</button>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td data-title="Trend">10</td>
+										<td data-title="Plunge">10</td>
+										<td data-title="Latitude">10</td>
+										<td data-title="Longitude">10</td>
+										<td data-title="Delete">
+											<button class="mdl-button mdl-js-button mdl-button--icon">
+												<i class="material-icons">delete</i>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td data-title="Strike">10</td>
+										<td data-title="Dip">10</td>
+										<td data-title="Latitude">10</td>
+										<td data-title="Longitude">10</td>
+										<td data-title="Delete">
+											<button class="mdl-button mdl-js-button mdl-button--icon">
+												<i class="material-icons">delete</i>
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
+							<thead>
+								<tr>
+									<th class="mdl-data-table__cell--non-numeric mdl-data-table__header--sorted-ascending">Datatype</th>
+									<th class="mdl-data-table__header--sorted-ascending">Strike/Trend</th>
+									<th class="mdl-data-table__header--sorted-ascending">Dip/Plunge</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="mdl-data-table__cell--non-numeric">Plane</td>
+									<td>25</td>
+									<td>45</td>
+								</tr>
+								<tr>
+									<td class="mdl-data-table__cell--non-numeric">Pole to Plane</td>
+									<td>50</td>
+									<td>25</td>
+								</tr>
+								<tr>
+									<td class="mdl-data-table__cell--non-numeric">Line</td>
+									<td>10</td>
+									<td>35</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+		</main>
+		</div>
+		<script src="js/ui.js"></script>
+		<script src="js/orient.js"></script>
+		<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+			<div class="mdl-snackbar__text"></div>
+			<button class="mdl-snackbar__action" type="button"></button>
+		</div>
+</body>
+<script>
+	var notification = document.querySelector('.mdl-js-snackbar');
+	navigator.serviceWorker.register('/sw.js').then(function(reg) {
+		if (!reg.installing) return;
+		console.log("There is a ServiceWorker installing");
+
+		var worker = reg.installing;
+		worker.addEventListener('statechange', function() {
+			if (worker.state == 'redundant') {
+				console.log('Install failed');
+
+				notification.MaterialSnackbar.showSnackbar({
+					message: 'Offline install Failed:ServiceWorker not supported by browser'
+				});
+			}
+			if (worker.state == 'installed') {
+				notification.MaterialSnackbar.showSnackbar({
+					message: 'SvgNet Ready For Offline Use'
+				});
+
+			}
+		});
+	});
+
+</script>
+
+</html>
