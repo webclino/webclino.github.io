@@ -9,9 +9,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta property="og:title" content="StrAtti" />
+	<meta property="og:title" content="WebClino" />
 	<meta property="og:description" content="" />
-	<meta property="og:image" content="Structural Geology Attitudes with HTML5 JS and SVG" />
+	<meta property="og:image" content="icon.png" />
 	<meta property="og:type" content="website" />
 	<link rel="manifest" href="manifest.json">
 
@@ -525,14 +525,13 @@
 	var notification = document.querySelector('.mdl-js-snackbar');
 
 </script>
-<!--<script>
-
+<script>
 	navigator.serviceWorker.register('/sw.js').then(function(reg) {
 		if (!reg.installing) return;
 		console.log("There is a ServiceWorker installing");
 		notification.MaterialSnackbar.showSnackbar({
-					message: 'WebClino has Installing for Offline Use'
-				});
+			message: 'WebClino has Installing for Offline Use'
+		});
 		var worker = reg.installing;
 		worker.addEventListener('statechange', function() {
 			if (worker.state == 'redundant') {
@@ -551,6 +550,7 @@
 		});
 	});
 
-</script>-->
+</script>
+
 
 </html>

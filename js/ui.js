@@ -11,19 +11,19 @@ function toggleLocks() {
 }
 
 function toggleEditLoc() {
-	if (document.querySelector("#editLatLon i").innerHTML === "edit_location") {
+	if (document.querySelector("#editLatLon i").innerHTML === "location_on") {
 		document.getElementById("Planelat").removeAttribute("disabled");
 		document.getElementById("Linelat").removeAttribute("disabled");
 		document.getElementById("Planelon").removeAttribute("disabled");
 		document.getElementById("Linelon").removeAttribute("disabled");
-		document.querySelector("#editLatLon i").innerHTML = "my_location";
+		document.querySelector("#editLatLon i").innerHTML = "location_off";
 
 	} else {
 		document.getElementById("Planelat").setAttribute("disabled", true);
 		document.getElementById("Linelat").setAttribute("disabled", true);
 		document.getElementById("Planelon").setAttribute("disabled", true);
 		document.getElementById("Linelon").setAttribute("disabled", true);
-		document.querySelector("#editLatLon i").innerHTML = "edit_location";
+		document.querySelector("#editLatLon i").innerHTML = "location_on";
 	}
 	document.getElementById("Planelat").parentNode.classList.toggle("is-disabled");
 	document.getElementById("Linelat").parentNode.classList.toggle("is-disabled");
