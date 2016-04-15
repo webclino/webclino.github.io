@@ -21,15 +21,21 @@ initUI();
 
 function toggleLocation() {
 
-	if (document.querySelector("#editLatLon i").innerHTML === "my_location") {
+	if (document.querySelector("#editLatLon i").innerHTML === "location_off") {
 		getLocation();
 		console.log("getlocation");
+		notification.MaterialSnackbar.showSnackbar({
+			message: "WebClino is tracking your device's GPS Location "
+		});
 	}
-	if (document.querySelector("#editLatLon i").innerHTML === "edit_location") {
+	if (document.querySelector("#editLatLon i").innerHTML === "location_on") {
 		stopLocation();
 		console.log("stoplocation");
 		document.getElementById("Accpl").innerHTML = "Location not taken from device";
 		document.getElementById("Accln").innerHTML = "Location not taken from device";
+		notification.MaterialSnackbar.showSnackbar({
+			message: "WebClino has stopped tracking your device's GPS Location"
+		});
 	}
 	toggleEditLoc();
 }
@@ -162,8 +168,9 @@ function deviceOrientationHandler(alpha, beta, gamma) {
 
 	var dip = Math.round(Math.sqrt(Math.pow(beta, 2) + Math.pow(gamma, 2))),
 		plunge = Math.round(dip),
-		strike = Math.round(compassHeading(alpha, beta, gamma)),
-		trend = strike + 90 > 360 ? strike + 90 - 360 : strike + 90;
+		head = Math.round(compassHeading(alpha, beta, gamma)),
+		strike = head + 90 > 360 ? head + 90 - 360 : head + 90,
+		trend = head;
 	document.getElementById("strike").parentNode.classList.add("is-dirty");
 	document.getElementById("strike").value = strike;
 	document.getElementById("dip").parentNode.classList.add("is-dirty");

@@ -49,7 +49,7 @@
 				<div class="mdl-layout-spacer"></div>
 
 				<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--icon mdl-button--accent" id="editLatLon">
-					<i class="material-icons">edit_location</i>
+					<i class="material-icons">location_on</i>
 				</button>
 
 			</div>
@@ -253,8 +253,9 @@
 			<button class="mdl-snackbar__action" type="button"></button>
 		</div>
 </body>
-<script>
-	var notification = document.querySelector('.mdl-js-snackbar');
+	<script>var notification = document.querySelector('.mdl-js-snackbar');</script>
+<!--<script>
+
 	navigator.serviceWorker.register('/sw.js').then(function(reg) {
 		if (!reg.installing) return;
 		console.log("There is a ServiceWorker installing");
@@ -279,6 +280,6 @@
 		});
 	});
 
-</script>
+</script>-->
 
 </html>
