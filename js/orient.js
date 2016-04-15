@@ -165,7 +165,8 @@ function compassHeading(alpha, beta, gamma) {
 
 function deviceOrientationHandler(alpha, beta, gamma) {
 
-document.getElementById("compass").setAttribute("transform","rotate(" + alpha + " 16 16)")
+document.getElementById("compass").setAttribute("transform","rotate(" + alpha + " 16 16)");
+	document.getElementById("heading").innerHTML=alpha+"&deg;"
 	var dip = Math.round(Math.sqrt(Math.pow(beta, 2) + Math.pow(gamma, 2))),
 		plunge = Math.round(dip),
 		head = Math.round(compassHeading(alpha, beta, gamma)),
