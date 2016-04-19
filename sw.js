@@ -9,7 +9,7 @@ var CACHE_URLS = [
 '/index.html',
 '/manifest.json',
 '/cache-polyfill.js',
-'/fonts/material.icons.css',
+'/fonts/material-icons.css',
 '/css/material.custom.css',
 '/js/orient.js',
 '/js/ui.js',
