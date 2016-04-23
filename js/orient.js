@@ -173,8 +173,8 @@ function getRotationMatrix(alpha, beta, gamma) {
 
 function deviceOrientationHandler(alpha, beta, gamma) {
 
-    var R=getRotationMatrix(alpha,beta,gamma);
-    var head=todeg(Math.atan((R[0][1]-R[1][0])/(R[0][0]+R[1][1])))%360;;
+    var R = getRotationMatrix(alpha, beta, gamma);
+    var head = Math.atan((R[0][1] - R[1][0]) / (R[0][0] + R[1][1])) * 180 / Math.PI;
     document.getElementById("compass").setAttribute("transform", "rotate(" + head + " 16 16)");
     document.getElementById("heading").innerHTML = Math.floor(360 - head) + "&deg;";
     var dip = Math.round(Math.sqrt(Math.pow(beta, 2) + Math.pow(gamma, 2))),
