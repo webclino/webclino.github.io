@@ -179,7 +179,7 @@ function deviceOrientationHandler(alpha, beta, gamma) {
     document.getElementById("compass").setAttribute("transform", "rotate(" + 360 - head + " 16 16)");
     document.getElementById("heading").innerHTML = Math.round(head) + "&deg;";
     var dip = Math.round(Math.sqrt(Math.pow(beta, 2) + Math.pow(gamma, 2))),
-        inc= Math.acos(R[2][2]),
+        inc= todeg(Math.acos(R[2][2])),
         plunge = inc,
         strike= inc-dip;
         //strike = head + 90 > 360 ? head + 90 - 360 : head + 90,
