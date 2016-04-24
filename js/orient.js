@@ -174,14 +174,19 @@ function getRotationMatrix(alpha, beta, gamma) {
 function deviceOrientationHandler(alpha, beta, gamma) {
     var R = getRotationMatrix(alpha, beta, gamma);
     var head = Math.round(todeg(Math.atan2((R[0][1] - R[1][0]), (R[0][0] + R[1][1]))));
-    if (head < 0) head += 360
+    if (head < 0) head += 360;
     var dip = Math.round(todeg(Math.acos(R[2][2]))),
-        plunge = dips,
-        strike = head + 90 > 360 ? head + 90 - 360 : head + 90,
-        trend = head;
+        off = 180;
+    if (dip > 90) {
+        off = 0;
+        dip = 180-dip;
+    };
+    var strike = head + 90 + off > 360 ? head + 90 + off - 360 : head + 90 + off;
+    var trend = strike - 90;
+    var plunge = dip;
     // read http://stackoverflow.com/questions/15649684/how-should-i-calculate-azimuth-pitch-orientation-when-my-android-device-isnt
 
-    document.getElementById("compass").setAttribute("transform", "rotate(" + 360 - head + " 16 16)");
+    document.getElementById("compass").setAttribute("transform", "rotate(" + Math.floor(360 - head) + " 16 16)");
     document.getElementById("heading").innerHTML = Math.round(head) + "&deg;";
 
     document.getElementById("strike").parentNode.classList.add("is-dirty");
