@@ -1,7 +1,7 @@
 importScripts('/cache-polyfill.js');
 
 const PREFIX = 'WebClino';
-const VER = 'v0.1.3-preAlpha';
+const VER = 'v0.1.3-preAlpha-freeze';
 const OFFLINE_CACHE = `${PREFIX}-${VER}`;
 
 var CACHE_URLS = [
