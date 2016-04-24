@@ -176,7 +176,7 @@ function deviceOrientationHandler(alpha, beta, gamma) {
     var head = Math.round(todeg(Math.atan2((R[0][1] - R[1][0]), (R[0][0] + R[1][1]))));
     if (head < 0) head += 360;
     var dip = Math.round(todeg(Math.acos(R[2][2]))),
-        plunge = Math.round(todeg(Math.acos(R[2][0]))),
+        plunge = Math.round(todeg(Math.acos(R[2][1]))),
         off = 0;
 
     if (dip > 90) {
