@@ -183,7 +183,7 @@ function deviceOrientationHandler(alpha, beta, gamma) {
         dip = 180 - dip;
     };
     var strike = head + 90 + off > 360 ? head + 90 + off - 360 : head + 90 + off;
-    var trend = Math.acos(R[1][0]),plunge = Math.round(todeg(Math.acos(R[2][2])));
+    var trend = Math.round(todeg(Math.acos(R[1][0]))),plunge = Math.round(todeg(Math.acos(R[2][2])));
     // read http://stackoverflow.com/questions/15649684/how-should-i-calculate-azimuth-pitch-orientation-when-my-android-device-isnt
 
     document.getElementById("compass").setAttribute("transform", "rotate(" + Math.floor(360 - head) + " 16 16)");
