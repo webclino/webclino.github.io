@@ -2,555 +2,568 @@
 <html>
 
 <head>
-	<title>WebClino</title>
-	<meta name="description" content="Structural Geology Attitudes with HTML5 JS and SVG">
-	<meta name="author" content="Arijit Laik">
+    <title>WebClino</title>
+    <meta name="description" content="Structural Geology Attitudes with HTML5 JS and SVG">
+    <meta name="author" content="Arijit Laik">
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta property="og:title" content="WebClino" />
-	<meta property="og:description" content="" />
-	<meta property="og:image" content="icon.png" />
-	<meta property="og:type" content="website" />
-	<link rel="manifest" href="manifest.json">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="WebClino" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="icon.png" />
+    <meta property="og:type" content="website" />
+    <link rel="manifest" href="manifest.json">
 
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="application-name" content="WebClino">
-	<link rel="icon" sizes="512x512" href="icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="WebClino">
+    <link rel="icon" sizes="512x512" href="icon.png">
 
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-title" content="StrAtti">
-	<link rel="apple-touch-icon" href="icon.png">
-
-
-	<meta name="msapplication-TileImage" content="icon.png">
-	<meta name="msapplication-TileColor" content="#009688">
-	<meta name="theme-color" content="#009688">
-	<link rel="stylesheet" href="css/material.min.css">
-	<link rel="stylesheet" href="fonts/material-icons.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="StrAtti">
+    <link rel="apple-touch-icon" href="icon.png">
 
 
-	<link rel="stylesheet" href="css/material.custom.css">
-	<script src="js/material.min.js"></script>
+    <meta name="msapplication-TileImage" content="icon.png">
+    <meta name="msapplication-TileColor" content="#009688">
+    <meta name="theme-color" content="#009688">
+    <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" href="fonts/material-icons.css">
+
+
+    <link rel="stylesheet" href="css/material.custom.css">
+    <script src="js/material.min.js"></script>
 
 
 </head>
 
 <body>
 
-	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
-		<header class="mdl-layout__header">
-			<div class="mdl-layout__header-row">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
 
-				<span class="mdl-layout-title"><b class="mdl-color-text--white">Web<l class="mdl-color-text--cyan-500 ">Clino</l></b></span>
+                <span class="mdl-layout-title"><b class="mdl-color-text--white">Web<l class="mdl-color-text--cyan-500 ">Clino</l></b></span>
 
-				<div class="mdl-layout-spacer"></div>
+                <div class="mdl-layout-spacer"></div>
 
-				<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--icon mdl-button--accent" id="editLatLon">
-					<i class="material-icons">location_on</i>
-				</button>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--icon mdl-button--accent" id="editLatLon">
+                    <i class="material-icons">location_on</i>
+                </button>
 
-			</div>
+            </div>
 
-			<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-				<a href="#fixed-tab-compass" class="mdl-layout__tab is-active"><i class="material-icons">explore</i></a>
-				<a href="#fixed-tab-1" class="mdl-layout__tab">Planes</a>
-				<a href="#fixed-tab-2" class="mdl-layout__tab">Lines</a>
-				<a href="#fixed-tab-3" class="mdl-layout__tab">Data</a>
-			</div>
-		</header>
-		<div class="mdl-layout__drawer">
-			<span class="mdl-layout-title">Menu</span>
-		</div>
-		<main class="mdl-layout__content">
-			<section class="mdl-layout__tab-panel is-active" id="fixed-tab-compass">
-				<div class="page-content">
-					<div class="mdl-grid section--center">
-						<div class="mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-							<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 32 32">
-								<metadata id="metadata14">
-									<rdf:RDF>
-										<cc:Work rdf:about="">
-											<dc:format>image/svg+xml</dc:format>
-											<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-											<dc:title/>
-										</cc:Work>
-									</rdf:RDF>
-								</metadata>
-								<g id="compass" transform="rotate(0 16 16)">
-									<g stroke="black" stroke-width="0.05">
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(1 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(2 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(3 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(4 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(6 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(7 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(8 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(9 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(11 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(12 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(13 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(14 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(16 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(17 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(18 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(19 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(21 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(22 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(23 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(24 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(26 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(27 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(28 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(29 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(31 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(32 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(33 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(34 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(36 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(37 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(38 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(39 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(41 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(42 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(43 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(44 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(46 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(47 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(48 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(49 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(51 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(52 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(53 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(54 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(56 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(57 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(58 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(59 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(61 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(62 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(63 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(64 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(66 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(67 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(68 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(69 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(71 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(72 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(73 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(74 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(76 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(77 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(78 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(79 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(81 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(82 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(83 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(84 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(86 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(87 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(88 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(89 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(91 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(92 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(93 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(94 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(96 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(97 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(98 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(99 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(101 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(102 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(103 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(104 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(106 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(107 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(108 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(109 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(111 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(112 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(113 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(114 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(116 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(117 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(118 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(119 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(121 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(122 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(123 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(124 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(126 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(127 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(128 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(129 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(131 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(132 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(133 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(134 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(136 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(137 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(138 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(139 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(141 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(142 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(143 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(144 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(146 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(147 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(148 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(149 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(151 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(152 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(153 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(154 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(156 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(157 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(158 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(159 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(161 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(162 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(163 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(164 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(166 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(167 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(168 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(169 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(171 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(172 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(173 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(174 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(176 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(177 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(178 16 16)"></line>
-										<line x1="16" y1="2" x2="16" y2="30" transform="rotate(179 16 16)"></line>
-									</g>
-									<circle cx="16" cy="16" r="11" fill="white"></circle>
-									<g stroke="black">
-										<g stroke-width="0.07">
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(5 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(15 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(25 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(35 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(45 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(55 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(65 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(75 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(85 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(95 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(105 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(115 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(125 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(135 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(145 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(155 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(165 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(175 16 16)"></line>
-										</g>
-										<circle cx="16" cy="16" r="10.75" fill="white" stroke="none"></circle>
-										<g stroke-width="0.1">
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(10 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(20 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(30 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(40 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(50 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(60 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(70 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(80 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(100 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(110 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(120 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(130 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(140 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(150 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(160 16 16)"></line>
-											<line x1="16" y1="2" x2="16" y2="30" transform="rotate(170 16 16)"></line>
-										</g>
-									</g>
-									<circle cx="16" cy="16" r="10.5" fill="white"></circle>
-									<line x1="16" y1="2" x2="16" y2="30" stroke="black" stroke-width=".15" transform="rotate(90 16 16)"></line>
-									<line x1="16" y1="2" x2="16" y2="30" stroke="black" stroke-width=".15"></line>
-									<circle cx="16" cy="16" r="10" fill="white"></circle>
-
-
-									<circle cx="16" cy="16" r="12.3" stroke="#242424" stroke-width="1.2" fill="none"></circle>
-									<g fill="white" text-anchor="middle">
-										<g font-size="1.5" font-weight="bold">
-											<text x="16" y="4.2">0</text>
-											<text x="16" y="4.2" transform="rotate(90 16 16)">90</text>
-											<text x="16" y="4.2" transform="rotate(180 16 16)">180</text>
-											<text x="16" y="4.2" transform="rotate(270 16 16)">270</text>
-										</g>
-										<g font-size="1">
-											<text x="16" y="4" transform="rotate(10 16 16)">10</text>
-											<text x="16" y="4" transform="rotate(20 16 16)">20</text>
-											<text x="16" y="4" transform="rotate(30 16 16)">30</text>
-											<text x="16" y="4" transform="rotate(40 16 16)">40</text>
-											<text x="16" y="4" transform="rotate(50 16 16)">50</text>
-											<text x="16" y="4" transform="rotate(60 16 16)">60</text>
-											<text x="16" y="4" transform="rotate(70 16 16)">70</text>
-											<text x="16" y="4" transform="rotate(80 16 16)">80</text>
-
-											<text x="16" y="4" transform="rotate(100 16 16)">100</text>
-											<text x="16" y="4" transform="rotate(110 16 16)">110</text>
-											<text x="16" y="4" transform="rotate(120 16 16)">120</text>
-											<text x="16" y="4" transform="rotate(130 16 16)">130</text>
-											<text x="16" y="4" transform="rotate(140 16 16)">140</text>
-											<text x="16" y="4" transform="rotate(150 16 16)">150</text>
-											<text x="16" y="4" transform="rotate(160 16 16)">160</text>
-											<text x="16" y="4" transform="rotate(170 16 16)">170</text>
-
-											<text x="16" y="4" transform="rotate(190 16 16)">190</text>
-											<text x="16" y="4" transform="rotate(200 16 16)">200</text>
-											<text x="16" y="4" transform="rotate(210 16 16)">210</text>
-											<text x="16" y="4" transform="rotate(220 16 16)">220</text>
-											<text x="16" y="4" transform="rotate(230 16 16)">230</text>
-											<text x="16" y="4" transform="rotate(240 16 16)">240</text>
-											<text x="16" y="4" transform="rotate(250 16 16)">250</text>
-											<text x="16" y="4" transform="rotate(260 16 16)">260</text>
-
-											<text x="16" y="4" transform="rotate(280 16 16)">280</text>
-											<text x="16" y="4" transform="rotate(290 16 16)">290</text>
-											<text x="16" y="4" transform="rotate(300 16 16)">300</text>
-											<text x="16" y="4" transform="rotate(310 16 16)">310</text>
-											<text x="16" y="4" transform="rotate(320 16 16)">320</text>
-											<text x="16" y="4" transform="rotate(330 16 16)">330</text>
-											<text x="16" y="4" transform="rotate(340 16 16)">340</text>
-											<text x="16" y="4" transform="rotate(350 16 16)">350</text>
-										</g>
-									</g>
-								</g>
-								<text x="16" y="16" id="heading" text-anchor="middle" font-size="1.2">
-								0&deg;
-								</text>
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                <a href="#fixed-tab-compass" class="mdl-layout__tab is-active"><i class="material-icons">explore</i></a>
+                <a href="#fixed-tab-1" class="mdl-layout__tab">Planes</a>
+                <a href="#fixed-tab-2" class="mdl-layout__tab">Lines</a>
+                <a href="#fixed-tab-3" class="mdl-layout__tab">Data</a>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Menu</span>
+        </div>
+        <main class="mdl-layout__content">
+            <section class="mdl-layout__tab-panel is-active" id="fixed-tab-compass">
+                <div class="page-content">
+                    <div class="mdl-grid section--center">
+                        <div class="mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone" id="compassCont">
+                            <svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 32 32">
+                                <metadata id="metadata14">
+                                    <rdf:RDF>
+                                        <cc:Work rdf:about="">
+                                            <dc:format>image/svg+xml</dc:format>
+                                            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                            <dc:title/>
+                                        </cc:Work>
+                                    </rdf:RDF>
+                                </metadata>
+                                <g id="compass" transform="rotate(0 16 16)">
+                                    <g stroke="black" stroke-width="0.05">
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(1 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(2 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(3 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(4 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(6 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(7 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(8 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(9 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(11 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(12 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(13 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(14 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(16 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(17 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(18 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(19 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(21 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(22 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(23 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(24 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(26 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(27 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(28 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(29 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(31 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(32 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(33 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(34 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(36 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(37 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(38 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(39 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(41 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(42 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(43 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(44 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(46 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(47 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(48 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(49 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(51 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(52 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(53 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(54 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(56 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(57 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(58 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(59 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(61 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(62 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(63 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(64 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(66 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(67 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(68 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(69 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(71 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(72 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(73 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(74 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(76 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(77 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(78 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(79 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(81 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(82 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(83 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(84 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(86 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(87 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(88 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(89 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(91 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(92 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(93 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(94 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(96 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(97 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(98 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(99 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(101 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(102 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(103 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(104 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(106 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(107 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(108 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(109 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(111 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(112 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(113 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(114 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(116 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(117 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(118 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(119 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(121 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(122 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(123 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(124 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(126 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(127 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(128 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(129 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(131 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(132 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(133 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(134 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(136 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(137 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(138 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(139 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(141 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(142 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(143 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(144 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(146 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(147 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(148 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(149 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(151 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(152 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(153 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(154 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(156 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(157 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(158 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(159 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(161 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(162 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(163 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(164 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(166 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(167 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(168 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(169 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(171 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(172 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(173 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(174 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(176 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(177 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(178 16 16)"></line>
+                                        <line x1="16" y1="2" x2="16" y2="30" transform="rotate(179 16 16)"></line>
+                                    </g>
+                                    <circle cx="16" cy="16" r="11" fill="white"></circle>
+                                    <g stroke="black">
+                                        <g stroke-width="0.07">
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(5 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(15 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(25 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(35 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(45 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(55 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(65 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(75 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(85 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(95 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(105 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(115 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(125 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(135 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(145 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(155 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(165 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(175 16 16)"></line>
+                                        </g>
+                                        <circle cx="16" cy="16" r="10.75" fill="white" stroke="none"></circle>
+                                        <g stroke-width="0.1">
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(10 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(20 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(30 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(40 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(50 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(60 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(70 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(80 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(100 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(110 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(120 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(130 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(140 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(150 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(160 16 16)"></line>
+                                            <line x1="16" y1="2" x2="16" y2="30" transform="rotate(170 16 16)"></line>
+                                        </g>
+                                    </g>
+                                    <circle cx="16" cy="16" r="10.5" fill="white"></circle>
+                                    <line x1="16" y1="2" x2="16" y2="30" stroke="black" stroke-width=".15" transform="rotate(90 16 16)"></line>
+                                    <line x1="16" y1="2" x2="16" y2="16" stroke="red" stroke-width=".15"></line>
+                                    <line x1="16" y1="16" x2="16" y2="30" stroke="black" stroke-width=".15"></line>
+                                    <circle cx="16" cy="16" r="10" fill="white"></circle>
 
 
-								<path id="needle" fill="#ff5252" d="m16,5s4,8.79,4,11-1.7909,4-4,4-4-1.79-4-4,4-11,4-11zm2,11c0-1.1046-0.89543-2-2-2s-2,0.89543-2,2,0.89543,2,2,2,2-0.89543,2-2z" />
-								<circle cx="16" cy="16" r="14" stroke="#009688" stroke-width="1.5" fill="none"></circle>
-							</svg>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="mdl-layout__tab-panel" id="fixed-tab-1">
-				<div class="page-content">
-					<div class="mdl-grid section--center">
-						<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-							<div class="mdl-card__title mdl-color--accent mdl-typography--text-center">
-								<h2 class="mdl-card__title-text mdl-color-text--accent-contrast">Record Planar Attitude</h2>
+                                    <circle cx="16" cy="16" r="13.3" stroke="#242424" stroke-width="3.1" fill="none"></circle>
+                                    <g fill="white" text-anchor="middle">
+                                        <g font-size="1.5" font-weight="bold">
 
-							</div>
-							<!--<div class="mdl-card__media">
+                                            <text x="16" y="4.2">0</text>
+                                            <text x="16" y="4.2" transform="rotate(90 16 16)">90</text>
+                                            <text x="16" y="4.2" transform="rotate(180 16 16)">180</text>
+                                            <text x="16" y="4.2" transform="rotate(270 16 16)">270</text>
+                                        </g>
+                                        <g font-size="1">
+                                            <text x="16" y="4" transform="rotate(10 16 16)">10</text>
+                                            <text x="16" y="4" transform="rotate(20 16 16)">20</text>
+                                            <text x="16" y="4" transform="rotate(30 16 16)">30</text>
+                                            <text x="16" y="4" transform="rotate(40 16 16)">40</text>
+                                            <text x="16" y="4" transform="rotate(50 16 16)">50</text>
+                                            <text x="16" y="4" transform="rotate(60 16 16)">60</text>
+                                            <text x="16" y="4" transform="rotate(70 16 16)">70</text>
+                                            <text x="16" y="4" transform="rotate(80 16 16)">80</text>
+
+                                            <text x="16" y="4" transform="rotate(100 16 16)">100</text>
+                                            <text x="16" y="4" transform="rotate(110 16 16)">110</text>
+                                            <text x="16" y="4" transform="rotate(120 16 16)">120</text>
+                                            <text x="16" y="4" transform="rotate(130 16 16)">130</text>
+                                            <text x="16" y="4" transform="rotate(140 16 16)">140</text>
+                                            <text x="16" y="4" transform="rotate(150 16 16)">150</text>
+                                            <text x="16" y="4" transform="rotate(160 16 16)">160</text>
+                                            <text x="16" y="4" transform="rotate(170 16 16)">170</text>
+
+                                            <text x="16" y="4" transform="rotate(190 16 16)">190</text>
+                                            <text x="16" y="4" transform="rotate(200 16 16)">200</text>
+                                            <text x="16" y="4" transform="rotate(210 16 16)">210</text>
+                                            <text x="16" y="4" transform="rotate(220 16 16)">220</text>
+                                            <text x="16" y="4" transform="rotate(230 16 16)">230</text>
+                                            <text x="16" y="4" transform="rotate(240 16 16)">240</text>
+                                            <text x="16" y="4" transform="rotate(250 16 16)">250</text>
+                                            <text x="16" y="4" transform="rotate(260 16 16)">260</text>
+
+                                            <text x="16" y="4" transform="rotate(280 16 16)">280</text>
+                                            <text x="16" y="4" transform="rotate(290 16 16)">290</text>
+                                            <text x="16" y="4" transform="rotate(300 16 16)">300</text>
+                                            <text x="16" y="4" transform="rotate(310 16 16)">310</text>
+                                            <text x="16" y="4" transform="rotate(320 16 16)">320</text>
+                                            <text x="16" y="4" transform="rotate(330 16 16)">330</text>
+                                            <text x="16" y="4" transform="rotate(340 16 16)">340</text>
+                                            <text x="16" y="4" transform="rotate(350 16 16)">350</text>
+                                        </g>
+                                    </g>
+
+                                    <g fill="white" text-anchor="middle" font-size="2" font-weight="bold" font-family="sans-serif">
+                                        <text x="16" y="2.9" fill="#ff5252">N</text>
+                                        <text x="16" y="2.9" transform="rotate(90 16 16)">E</text>
+                                        <text x="16" y="2.9" transform="rotate(180 16 16)">S</text>
+                                        <text x="16" y="2.9" transform="rotate(270 16 16)">W</text>
+                                    </g>
+                                </g>
+
+
+
+                                <path id="needle" fill="#ff5252" stroke-width="1" d="M18.5,16L16,5L13.5,16  z" />
+                                <path id="needle1" fill="#5295ff" stroke-width="1" d="M18.5,16L16,27L13.5,16  z"  />
+                                <circle cx="16" cy="16" fill="white" r="1.5"></circle>
+                                <text x="16" y="16.5" id="heading" text-anchor="middle" font-size="1.3" font-family="sans" font-weight="bold" >
+                                    0
+                                </text>
+
+                            </svg>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-1">
+                <div class="page-content">
+                    <div class="mdl-grid section--center">
+                        <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                            <div class="mdl-card__title mdl-color--accent mdl-typography--text-center">
+                                <h2 class="mdl-card__title-text mdl-color-text--accent-contrast">Record Planar Attitude</h2>
+
+                            </div>
+                            <!--<div class="mdl-card__media">
 									<img src="photo.jpg" width="220" height="140" border="0" alt="" style="padding:20px;">
 								</div>-->
-							<div class="mdl-card__supporting-text">
-								<div class="mdl-grid mdl-typography--text-justify	">
-									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="number" max="360" min="0" step=any id="strike">
-											<label class="mdl-textfield__label" for="strike">Strike</label>
-										</div>
-									</div>
-									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="number" max="90" min="0" step=any id="dip">
-											<label class="mdl-textfield__label" for="dip">Dip</label>
-										</div>
-									</div>
-									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="number" max="180" min="-180" step=any id="Planelat" disabled>
-											<label class="mdl-textfield__label" for="Planelat">Lat</label>
-										</div>
-									</div>
-									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="number" max="90" min="-90" step=any id="Planelon" disabled>
-											<label class="mdl-textfield__label" for="PlaneLon">Lon</label>
-										</div>
-									</div>
-									<b>Location Accuracy:</b><span id="Accpl"></span>
-								</div>
-							</div>
-							<div class="mdl-card__actions mdl-typography--text-center ">
+                            <div class="mdl-card__supporting-text">
+                                <div class="mdl-grid mdl-typography--text-justify	">
+                                    <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="number" max="360" min="0" step=any id="strike">
+                                            <label class="mdl-textfield__label" for="strike">Strike</label>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="number" max="90" min="0" step=any id="dip">
+                                            <label class="mdl-textfield__label" for="dip">Dip</label>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="number" max="180" min="-180" step=any id="Planelat" disabled>
+                                            <label class="mdl-textfield__label" for="Planelat">Lat</label>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="number" max="90" min="-90" step=any id="Planelon" disabled>
+                                            <label class="mdl-textfield__label" for="PlaneLon">Lon</label>
+                                        </div>
+                                    </div>
+                                    <b>Location Accuracy:</b><span id="Accpl"></span>
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions mdl-typography--text-center ">
 
 
-							</div>
-						</div>
+                            </div>
+                        </div>
 
-					</div>
-				</div>
-				<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect saverbutton">
-					<i class="material-icons">save</i>
-				</button>
-				<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--primary mdl-button--colored mdl-js-ripple-effect lockerbutton">
-					<i class="material-icons">lock_open</i>
-				</button>
-			</section>
-			<section class="mdl-layout__tab-panel" id="fixed-tab-2">
-				<div class="page-content">
-					<div class="mdl-grid section--center">
-						<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-							<div class="mdl-card__title mdl-color--accent mdl-typography--text-center">
-								<h2 class="mdl-card__title-text mdl-color-text--accent-contrast">Record Linear Attitude</h2>
+                    </div>
+                </div>
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect saverbutton">
+                    <i class="material-icons">save</i>
+                </button>
+                <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--primary mdl-button--colored mdl-js-ripple-effect lockerbutton">
+                    <i class="material-icons">lock_open</i>
+                </button>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+                <div class="page-content">
+                    <div class="mdl-grid section--center">
+                        <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                            <div class="mdl-card__title mdl-color--accent mdl-typography--text-center">
+                                <h2 class="mdl-card__title-text mdl-color-text--accent-contrast">Record Linear Attitude</h2>
 
-							</div>
-							<!--<div class="mdl-card__media">
+                            </div>
+                            <!--<div class="mdl-card__media">
 									<img src="photo.jpg" width="220" height="140" border="0" alt="" style="padding:20px;">
 								</div>-->
-							<div class="mdl-card__supporting-text">
-								<div class="mdl-grid mdl-typography--text-justify	">
-									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="number" max="360" min="0" step=any id="trend">
-											<label class="mdl-textfield__label" for="trend">Trend</label>
-										</div>
-									</div>
-									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="number" max="90" min="0" step=any id="plunge">
-											<label class="mdl-textfield__label" for="plunge">Plunge</label>
-										</div>
-									</div>
-									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="number" max="180" min="-180" step=any id="Linelat" disabled>
-											<label class="mdl-textfield__label" for="Linelat">Lat</label>
-										</div>
-									</div>
-									<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="number" max="90" min="-90" step=any id="Linelon" disabled>
-											<label class="mdl-textfield__label" for="Linelon">Long</label>
-										</div>
-									</div>
-									<b>Location Accuracy:</b><span id="Accln"></span>
-								</div>
-							</div>
-							<div class="mdl-card__actions mdl-typography--text-center ">
-							</div>
-						</div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="mdl-grid mdl-typography--text-justify	">
+                                    <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="number" max="360" min="0" step=any id="trend">
+                                            <label class="mdl-textfield__label" for="trend">Trend</label>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="number" max="90" min="0" step=any id="plunge">
+                                            <label class="mdl-textfield__label" for="plunge">Plunge</label>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="number" max="180" min="-180" step=any id="Linelat" disabled>
+                                            <label class="mdl-textfield__label" for="Linelat">Lat</label>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="number" max="90" min="-90" step=any id="Linelon" disabled>
+                                            <label class="mdl-textfield__label" for="Linelon">Long</label>
+                                        </div>
+                                    </div>
+                                    <b>Location Accuracy:</b><span id="Accln"></span>
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions mdl-typography--text-center ">
+                            </div>
+                        </div>
 
-					</div>
-					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect saverbutton">
-						<i class="material-icons">save</i>
-					</button>
-					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--primary mdl-button--colored mdl-js-ripple-effect lockerbutton">
-						<i class="material-icons">lock_open</i>
-					</button>
-			</section>
-			<section class="mdl-layout__tab-panel" id="fixed-tab-3">
-				<div class="page-content">
-					<div class="mdl-grid section--center">
-						<div class="mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-							<table class="mdl-data-table mdl-js-data-table">
-								<thead>
-									<tr>
-										<th>Strike/Trend</th>
-										<th>Dip/Plunge</th>
-										<th>Lat</th>
-										<th>Lon</th>
-										<th>
-											<button class="mdl-button mdl-js-button mdl-button--icon">
-												<i class="material-icons">more_vert</i>
-											</button>
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td data-title="Trend">10</td>
-										<td data-title="Plunge">10</td>
-										<td data-title="Latitude">10</td>
-										<td data-title="Longitude">10</td>
-										<td data-title="Delete">
-											<button class="mdl-button mdl-js-button mdl-button--icon">
-												<i class="material-icons">delete</i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td data-title="Strike">10</td>
-										<td data-title="Dip">10</td>
-										<td data-title="Latitude">10</td>
-										<td data-title="Longitude">10</td>
-										<td data-title="Delete">
-											<button class="mdl-button mdl-js-button mdl-button--icon">
-												<i class="material-icons">delete</i>
-											</button>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
-							<thead>
-								<tr>
-									<th class="mdl-data-table__cell--non-numeric mdl-data-table__header--sorted-ascending">Datatype</th>
-									<th class="mdl-data-table__header--sorted-ascending">Strike/Trend</th>
-									<th class="mdl-data-table__header--sorted-ascending">Dip/Plunge</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="mdl-data-table__cell--non-numeric">Plane</td>
-									<td>25</td>
-									<td>45</td>
-								</tr>
-								<tr>
-									<td class="mdl-data-table__cell--non-numeric">Pole to Plane</td>
-									<td>50</td>
-									<td>25</td>
-								</tr>
-								<tr>
-									<td class="mdl-data-table__cell--non-numeric">Line</td>
-									<td>10</td>
-									<td>35</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</section>
+                    </div>
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect saverbutton">
+                        <i class="material-icons">save</i>
+                    </button>
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--primary mdl-button--colored mdl-js-ripple-effect lockerbutton">
+                        <i class="material-icons">lock_open</i>
+                    </button>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+                <div class="page-content">
+                    <div class="mdl-grid section--center">
+                        <div class="mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                            <table class="mdl-data-table mdl-js-data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Strike/Trend</th>
+                                        <th>Dip/Plunge</th>
+                                        <th>Lat</th>
+                                        <th>Lon</th>
+                                        <th>
+                                            <button class="mdl-button mdl-js-button mdl-button--icon">
+                                                <i class="material-icons">more_vert</i>
+                                            </button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-title="Trend">10</td>
+                                        <td data-title="Plunge">10</td>
+                                        <td data-title="Latitude">10</td>
+                                        <td data-title="Longitude">10</td>
+                                        <td data-title="Delete">
+                                            <button class="mdl-button mdl-js-button mdl-button--icon">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="Strike">10</td>
+                                        <td data-title="Dip">10</td>
+                                        <td data-title="Latitude">10</td>
+                                        <td data-title="Longitude">10</td>
+                                        <td data-title="Delete">
+                                            <button class="mdl-button mdl-js-button mdl-button--icon">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
+                            <thead>
+                                <tr>
+                                    <th class="mdl-data-table__cell--non-numeric mdl-data-table__header--sorted-ascending">Datatype</th>
+                                    <th class="mdl-data-table__header--sorted-ascending">Strike/Trend</th>
+                                    <th class="mdl-data-table__header--sorted-ascending">Dip/Plunge</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">Plane</td>
+                                    <td>25</td>
+                                    <td>45</td>
+                                </tr>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">Pole to Plane</td>
+                                    <td>50</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">Line</td>
+                                    <td>10</td>
+                                    <td>35</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
 
-		</main>
-		</div>
-		<script src="js/ui.js"></script>
-		<script src="js/orient.js"></script>
-		<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
-			<div class="mdl-snackbar__text"></div>
-			<button class="mdl-snackbar__action" type="button"></button>
-		</div>
+        </main>
+        </div>
+        <script src="js/ui.js"></script>
+        <script src="js/orient.js"></script>
+        <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button class="mdl-snackbar__action" type="button"></button>
+        </div>
 </body>
 <script>
-	var notification = document.querySelector('.mdl-js-snackbar');
+    var notification = document.querySelector('.mdl-js-snackbar');
 
 </script>
 <script>
-	navigator.serviceWorker.register('/sw.js').then(function(reg) {
-		if (!reg.installing) return;
-		console.log("There is a ServiceWorker installing");
-		notification.MaterialSnackbar.showSnackbar({
-			message: 'WebClino has Installing for Offline Use'
-		});
-		var worker = reg.installing;
-		worker.addEventListener('statechange', function() {
-			if (worker.state == 'redundant') {
-				console.log('Install failed');
+    navigator.serviceWorker.register('/sw.js').then(function(reg) {
+        if (!reg.installing) return;
+        console.log("There is a ServiceWorker installing");
+        notification.MaterialSnackbar.showSnackbar({
+            message: 'WebClino has Installing for Offline Use'
+        });
+        var worker = reg.installing;
+        worker.addEventListener('statechange', function() {
+            if (worker.state == 'redundant') {
+                console.log('Install failed');
 
-				notification.MaterialSnackbar.showSnackbar({
-					message: 'Offline install Failed:ServiceWorker not supported by browser'
-				});
-			}
-			if (worker.state == 'installed') {
-				notification.MaterialSnackbar.showSnackbar({
-					message: 'WebClino Ready For Offline Use'
-				});
+                notification.MaterialSnackbar.showSnackbar({
+                    message: 'Offline install Failed:ServiceWorker not supported by browser'
+                });
+            }
+            if (worker.state == 'installed') {
+                notification.MaterialSnackbar.showSnackbar({
+                    message: 'WebClino Ready For Offline Use'
+                });
 
-			}
-		});
-	});
+            }
+        });
+    });
 
 </script>
 

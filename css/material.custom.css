@@ -13,6 +13,9 @@ body {
 #dataout {
 	width: 100%;
 }
+#compassCont{
+    border-radius: 50%;
+}
 .lockerbutton {
 	position: fixed;
 	display: block;

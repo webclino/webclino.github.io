@@ -177,13 +177,20 @@ function deviceOrientationHandler(alpha, beta, gamma) {
     if (head < 0) head += 360;
     var dip = Math.round(todeg(Math.acos(R[2][2]))),
         off = 0;
-    var trend=Math.round(todeg((Math.asin(-Math.tan(torad(gamma))/Math.tan(torad(dip))))));
+
     if (dip > 90) {
         off = 180;
         dip = 180 - dip;
     };
-    var strike = head + 90 + off > 360 ? head + 90 + off - 360 : head + 90 + off;
-    //var trend = strike+90,plunge=dip;
+    var strike = head + 90 + off > 360 ? (head + 90 + off) % 360 : head + 90 + off;
+
+    off=0;
+    var plunge = Math.round(todeg(Math.acos(R[2][0])));
+    if (plunge > 90) {
+        off = 180;
+        plunge = 180 - plunge;
+    };
+     var trend = head + off > 360 ? (head + off) % 360 : head + off;
 
     // read http://stackoverflow.com/questions/15649684/how-should-i-calculate-azimuth-pitch-orientation-when-my-android-device-isnt
 
