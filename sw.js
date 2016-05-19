@@ -16,7 +16,7 @@ var CACHE_URLS = [
 '/js/util.js',
 '/js/init.js',
 '/js/svgnet.js',
-'/css/material.min.css',
+'/css/material.teal-blue.min.css',
 '/fonts/MaterialIcons-Regular.woff2',
 '/fonts/MaterialIcons-Regular.woff',
 '/fonts/MaterialIcons-Regular.ttf',
