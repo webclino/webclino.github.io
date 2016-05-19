@@ -173,6 +173,7 @@ function getRotationMatrix(alpha, beta, gamma) {
 
 function deviceOrientationHandler(alpha, beta, gamma) {
     var R = getRotationMatrix(alpha, beta, gamma);
+    document.getElementById("gammaT").innerHTML=Math.abs(gamma);
     var head = todeg(Math.atan2((R[0][1] - R[1][0]), (R[0][0] + R[1][1])));
     if (head < 0) head += 360;
     var dip = Math.round(todeg(Math.acos(R[2][2]))),
