@@ -80,8 +80,8 @@ function showPosition(position) {
 function getLocation() {
     var options = {
         enableHighAccuracy: true, // Hint to try to use true GPS instead of other location proxies like WiFi or cell towers
-        timeout: 5000, // Maximum number of milliseconds to wait before timing out
-        maximumAge: 0 // Maximum of milliseconds since last position fix
+        timeout: 50000, // Maximum number of milliseconds to wait before timing out
+        maximumAge:Infinity // Maximum of milliseconds since last position fix
     };
     if (navigator.geolocation) {
         watchID = navigator.geolocation.watchPosition(showPosition, showLocError, options)
