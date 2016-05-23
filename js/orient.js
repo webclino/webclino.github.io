@@ -81,7 +81,7 @@ function getLocation() {
     var options = {
         enableHighAccuracy: true, // Hint to try to use true GPS instead of other location proxies like WiFi or cell towers
         timeout: 50000, // Maximum number of milliseconds to wait before timing out
-        maximumAge:Infinity // Maximum of milliseconds since last position fix
+        maximumAge: Infinity // Maximum of milliseconds since last position fix
     };
     if (navigator.geolocation) {
         watchID = navigator.geolocation.watchPosition(showPosition, showLocError, options)
@@ -178,7 +178,7 @@ function deviceOrientationHandler(alpha, beta, gamma) {
     if (head < 0) head += 360;
     var dip = Math.round(todeg(Math.acos(R[2][2]))),
         off = 0;
-
+    var horizontal = dip;
     if (dip > 90) {
         off = 180;
         dip = 180 - dip;
@@ -187,12 +187,12 @@ function deviceOrientationHandler(alpha, beta, gamma) {
 
     off = 180;
     var vertical = Math.round(todeg(Math.acos(R[2][0])));
-    if (vertical > 90) {
 
-        vertical = 180 - vertical;
-    };
-
-    document.getElementById("gammaT").innerHTML = Math.abs(vertical) + "&deg";
+    document.getElementById("gammaT").innerHTML = Math.round(horizontal) + "&deg," + Math.round(vertical) + "&deg";
+    var bcy = 6 + vertical / 9;
+    var bcx = 6 + (90-horizontal )/ 9;
+    document.getElementById("bubble").setAttribute("cx", bcx);
+    document.getElementById("bubble").setAttribute("cy", bcy);
     var plunge = Math.round(todeg(Math.asin(R[2][1] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2]))));
     if (plunge > 90) {
         off = 0;
