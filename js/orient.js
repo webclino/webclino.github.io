@@ -131,6 +131,7 @@ function torad(degrees) {
 function todeg(radians) {
     return radians * 180 / Math.PI;
 }
+
 function boundToRange(number, min, max) {
     if (number < min) {
         return min;
@@ -186,7 +187,7 @@ function deviceOrientationHandler(alpha, beta, gamma) {
     if (head < 0) head += 360;
     var dip = Math.round(todeg(Math.acos(R[2][2]))),
         off = 0;
-    var horizontal = dip;
+
     if (dip > 90) {
         off = 180;
         dip = 180 - dip;
@@ -194,19 +195,21 @@ function deviceOrientationHandler(alpha, beta, gamma) {
     var strike = head + 90 + off > 360 ? Math.round((head + 90 + off) % 360) : Math.round(head + 90 + off);
 
     off = 180;
-    var vertical = Math.round(todeg(Math.acos(R[2][0])));
 
-    document.getElementById("gammaT").innerHTML = Math.round(horizontal) + "&deg," + Math.round(vertical) + "&deg";
+    document.getElementById("gammaT").innerHTML = "alpha" + Math.round(alpha) + " beta" + Math.round(beta) + " gamma" + Math.round(gamma);
 
-    var bcy = 16 - boundToRange(beta,-90,90) / 9;
-    var bcx = 16 - boundToRange(gamma,-90,90) / 9;
-    document.getElementById("bubble").setAttribute("cx", bcx);
-    document.getElementById("bubble").setAttribute("cy", bcy);
-    var plunge = Math.round(todeg(Math.asin(R[2][1] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2]))));
+    var plunge_X = Math.round(todeg(Math.asin(R[2][0] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2]))));
+    var plunge_Y = Math.round(todeg(Math.asin(R[2][1] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2]))));
+    var plunge = plunge_Y;
     if (plunge > 90) {
         off = 0;
         plunge = 180 - plunge;
     };
+    var bcy = 16 - (plunge_Y / 10);
+    var bcx = 16 + (plunge_X / 10);
+    document.getElementById("bubble").setAttribute("cx", bcx);
+    document.getElementById("bubble").setAttribute("cy", bcy);
+
     var trend = head + off > 360 ? Math.round((head + off) % 360) : Math.round(head + off);
 
     // read http://stackoverflow.com/questions/15649684/how-should-i-calculate-azimuth-pitch-orientation-when-my-android-device-isnt
