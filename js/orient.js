@@ -198,9 +198,9 @@ function deviceOrientationHandler(alpha, beta, gamma) {
 
     document.getElementById("gammaT").innerHTML = "alpha" + Math.round(alpha) + " beta" + Math.round(beta) + " gamma" + Math.round(gamma);
 
-    var plunge_X = Math.round(todeg(Math.asin(R[2][0] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2]))));
-    var plunge_Y = Math.round(todeg(Math.asin(R[2][1] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2]))));
-    var plunge = plunge_Y;
+    var plunge_X = todeg(Math.asin(R[2][0] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2])));
+    var plunge_Y = todeg(Math.asin(R[2][1] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2])));
+    var plunge = Math.floor(plunge_Y);
     if (plunge > 90) {
         off = 0;
         plunge = 180 - plunge;
