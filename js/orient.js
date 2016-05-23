@@ -189,8 +189,8 @@ function deviceOrientationHandler(alpha, beta, gamma) {
     var vertical = Math.round(todeg(Math.acos(R[2][0])));
 
     document.getElementById("gammaT").innerHTML = Math.round(horizontal) + "&deg," + Math.round(vertical) + "&deg";
-    var bcy = 6 + vertical / 9;
-    var bcx = 6 + (90-horizontal )/ 9;
+    var bcy = 6 + beta / 9;
+    var bcx = 6 + gamma / 9;
     document.getElementById("bubble").setAttribute("cx", bcx);
     document.getElementById("bubble").setAttribute("cy", bcy);
     var plunge = Math.round(todeg(Math.asin(R[2][1] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2]))));
