@@ -196,7 +196,6 @@ function deviceOrientationHandler(alpha, beta, gamma) {
 
     off = 180;
 
-    document.getElementById("gammaT").innerHTML = "alpha" + Math.round(alpha) + " beta" + Math.round(beta) + " gamma" + Math.round(gamma);
 
     var plunge_X = todeg(Math.asin(R[2][0] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2])));
     var plunge_Y = todeg(Math.asin(R[2][1] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2])));
@@ -205,10 +204,18 @@ function deviceOrientationHandler(alpha, beta, gamma) {
         off = 0;
         plunge = 180 - plunge;
     };
-    var bcy = 16 - (plunge_Y / 10);
-    var bcx = 16 + (plunge_X / 10);
-    document.getElementById("bubble").setAttribute("cx", bcx);
-    document.getElementById("bubble").setAttribute("cy", bcy);
+    var bcy = boundToRange(plunge_Y / 10, -4.5, 4.5);
+    var bcx = boundToRange(plunge_X / 10, -4.5, 4.5);
+    if (plunge_X*plunge_X + plunge_Y * plunge_Y >= 45*45) {
+
+        bcx=4.5*Math.cos(Math.atan2(plunge_Y,plunge_X));
+        bcy=4.5*Math.sin(Math.atan2(plunge_Y,plunge_X));
+    }
+
+    document.getElementById("gammaT").innerHTML = plunge_X+",\n"+plunge_Y;
+
+    document.getElementById("bubble").setAttribute("cx", 16+bcx);
+    document.getElementById("bubble").setAttribute("cy", 16-bcy);
 
     var trend = head + off > 360 ? Math.round((head + off) % 360) : Math.round(head + off);
 
