@@ -80,8 +80,8 @@ function showPosition(position) {
 function getLocation() {
     var options = {
         enableHighAccuracy: true, // Hint to try to use true GPS instead of other location proxies like WiFi or cell towers
-        timeout: 5000, // Maximum number of milliseconds to wait before timing out
-        maximumAge: 0 // Maximum of milliseconds since last position fix
+        timeout: 50000, // Maximum number of milliseconds to wait before timing out
+        maximumAge: Infinity // Maximum of milliseconds since last position fix
     };
     if (navigator.geolocation) {
         watchID = navigator.geolocation.watchPosition(showPosition, showLocError, options)
@@ -132,6 +132,15 @@ function todeg(radians) {
     return radians * 180 / Math.PI;
 }
 
+function boundToRange(number, min, max) {
+    if (number < min) {
+        return min;
+    }
+    if (number > max) {
+        return max;
+    }
+    return number;
+}
 var degtorad = Math.PI / 180; // Degree-to-Radian conversion
 
 function getRotationMatrix(alpha, beta, gamma) {
@@ -186,18 +195,28 @@ function deviceOrientationHandler(alpha, beta, gamma) {
     var strike = head + 90 + off > 360 ? Math.round((head + 90 + off) % 360) : Math.round(head + 90 + off);
 
     off = 180;
-    var vertical = Math.round(todeg(Math.acos(R[2][0])));
-    if (vertical > 90) {
 
-        vertical = 180 - vertical;
-    };
 
-    document.getElementById("gammaT").innerHTML = Math.abs(vertical) + "&deg";
-    var plunge = Math.round(todeg(Math.asin(R[2][1] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2]))));
+    var plunge_X = todeg(Math.asin(R[2][0] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2])));
+    var plunge_Y = todeg(Math.asin(R[2][1] / Math.sqrt(R[2][0] * R[2][0] + R[2][1] * R[2][1] + R[2][2] * R[2][2])));
+    var plunge = Math.floor(plunge_Y);
     if (plunge > 90) {
         off = 0;
         plunge = 180 - plunge;
     };
+    var bcy = boundToRange(plunge_Y / 10, -4.5, 4.5);
+    var bcx = boundToRange(plunge_X / 10, -4.5, 4.5);
+    if (plunge_X*plunge_X + plunge_Y * plunge_Y >= 45*45) {
+
+        bcx=4.5*Math.cos(Math.atan2(plunge_Y,plunge_X));
+        bcy=4.5*Math.sin(Math.atan2(plunge_Y,plunge_X));
+    }
+
+    document.getElementById("gammaT").innerHTML = plunge_X+",\n"+plunge_Y;
+
+    document.getElementById("bubble").setAttribute("cx", 16+bcx);
+    document.getElementById("bubble").setAttribute("cy", 16-bcy);
+
     var trend = head + off > 360 ? Math.round((head + off) % 360) : Math.round(head + off);
 
     // read http://stackoverflow.com/questions/15649684/how-should-i-calculate-azimuth-pitch-orientation-when-my-android-device-isnt
