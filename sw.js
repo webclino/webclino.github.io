@@ -1,7 +1,7 @@
 importScripts('/cache-polyfill.js');
 
 const PREFIX = 'WebClino';
-const VER = 'v0.1.3-preAlpha_final';
+const VER = 'v0.1.5-preAlpha_final';
 const OFFLINE_CACHE = `${PREFIX}-${VER}`;
 
 var CACHE_URLS = [
@@ -16,6 +16,8 @@ var CACHE_URLS = [
 '/js/util.js',
 '/js/init.js',
 '/js/svgnet.js',
+'/js/gyronorm.complete.js',
+'/js/es6-promise.auto.min.js',
 '/css/material.teal-blue.min.css',
 '/fonts/MaterialIcons-Regular.woff2',
 '/fonts/MaterialIcons-Regular.woff',

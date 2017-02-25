@@ -2,7 +2,7 @@ var watchID;
 
 function appInit() {
     getLocation();
-    getOrienation();
+   // getOrienation();
 }
 
 appInit();
@@ -99,6 +99,45 @@ function stopLocation() {
 
 
 //Orienation Functions
+var gn = new GyroNorm();
+
+var args = {
+    frequency: 50, // ( How often the object sends the values - milliseconds )
+    gravityNormalized: true, // ( If the garvity related values to be normalized )
+    orientationBase: GyroNorm.WORLD, // ( Can be GyroNorm.GAME or GyroNorm.WORLD. gn.GAME returns orientation values with respect to the head direction of the device. gn.WORLD returns the orientation values with respect to the actual north direction of the world. )
+    decimalCount: 2, // ( How many digits after the decimal point will there be in the return values )
+    logger: null, // ( Function to be called to log messages from gyronorm.js )
+    screenAdjusted: false // ( If set to true it will return screen adjusted values. )
+};
+
+var gn = new GyroNorm();
+
+
+
+gn.init(args).then(function () {
+    gn.start(function (data) {
+        // Process:
+        // data.do.alpha    ( deviceorientation event alpha value )
+        // data.do.beta     ( deviceorientation event beta value )
+        // data.do.gamma    ( deviceorientation event gamma value )
+        // data.do.absolute ( deviceorientation event absolute value )
+
+        // data.dm.x        ( devicemotion event acceleration x value )
+        // data.dm.y        ( devicemotion event acceleration y value )
+        // data.dm.z        ( devicemotion event acceleration z value )
+
+        // data.dm.gx       ( devicemotion event accelerationIncludingGravity x value )
+        // data.dm.gy       ( devicemotion event accelerationIncludingGravity y value )
+        // data.dm.gz       ( devicemotion event accelerationIncludingGravity z value )
+
+        // data.dm.alpha    ( devicemotion event rotationRate alpha value )
+        // data.dm.beta     ( devicemotion event rotationRate beta value )
+        // data.dm.gamma    ( devicemotion event rotationRate gamma value )
+        deviceOrientationHandler(data.do.alpha, data.do.beta, data.do.gamma);
+    });
+}).catch(function (e) {
+    // Catch if the DeviceOrientation or DeviceMotion is not supported by the browser or device
+});
 
 function getOrienation() {
     if (window.DeviceOrientationEvent) {
@@ -116,7 +155,7 @@ function getOrienation() {
             //console.log(eventData.absolute);
             // call our orientation event handler
 
-            deviceOrientationHandler(alpha, beta, gamma);
+            //deviceOrientationHandler(alpha, beta, gamma);
         }, false);
     } else {
         //	document.getElementById("doEvent").innerHTML = "Not supported on your device or browser.  Sorry."
@@ -206,16 +245,16 @@ function deviceOrientationHandler(alpha, beta, gamma) {
     };
     var bcy = boundToRange(plunge_Y / 10, -4.5, 4.5);
     var bcx = boundToRange(plunge_X / 10, -4.5, 4.5);
-    if (plunge_X*plunge_X + plunge_Y * plunge_Y >= 45*45) {
+    if (plunge_X * plunge_X + plunge_Y * plunge_Y >= 45 * 45) {
 
-        bcx=4.5*Math.cos(Math.atan2(plunge_Y,plunge_X));
-        bcy=4.5*Math.sin(Math.atan2(plunge_Y,plunge_X));
+        bcx = 4.5 * Math.cos(Math.atan2(plunge_Y, plunge_X));
+        bcy = 4.5 * Math.sin(Math.atan2(plunge_Y, plunge_X));
     }
 
-    document.getElementById("gammaT").innerHTML = plunge_X+",\n"+plunge_Y;
+    document.getElementById("gammaT").innerHTML = plunge_X + ",\n" + plunge_Y;
 
-    document.getElementById("bubble").setAttribute("cx", 16+bcx);
-    document.getElementById("bubble").setAttribute("cy", 16-bcy);
+    document.getElementById("bubble").setAttribute("cx", 16 + bcx);
+    document.getElementById("bubble").setAttribute("cy", 16 - bcy);
 
     var trend = head + off > 360 ? Math.round((head + off) % 360) : Math.round(head + off);
 
